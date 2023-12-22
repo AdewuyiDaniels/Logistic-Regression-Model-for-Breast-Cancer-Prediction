@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>ML Prediction</title>
+</head>
+<body class="bg-gray-200 p-4">
+    <div class="max-w-md mx-auto bg-white p-8 border rounded-md mt-10">
+        <h1 class="text-2xl font-bold mb-4">Enter Clinical Details</h1>
+        <form action="/predict" method="post">
+            <!-- Input fields for Age, BMI, Glucose, etc. -->
+            <div class="mb-4">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" class="p-2 border rounded-md" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="bmi">BMI:</label>
+                <input type="text" id="bmi" name="bmi" class="p-2 border rounded-md" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="glucose">Glucose:</label>
+                <input type="text" id="glucose" name="glucose" class="p-2 border rounded-md" required>
+            </div>
+            
+            <div class="mb-4">
+              <label for="insulin">Insulin:</label>
+              <input type="text" id="insulin" name="insulin" class="p-2 border rounded-md" required>
+            </div>
+
+            <div class="mb-4">
+              <label for="homa">HOMA:</label>
+              <input type="text" id="homa" name="homa" class="p-2 border rounded-md" required>
+            </div>
+          
+            <div class="mb-4">
+              <label for="leptin">Leptin:</label>
+              <input type="text" id="leptin" name="leptin" class="p-2 border rounded-md" required>
+            </div>
+
+            <div class="mb-4">
+              <label for="adiponectin">Adiponectin:</label>
+              <input type="text" id="adiponectin" name="adiponectin" class="p-2 border rounded-md" required>
+            </div>
+
+            <div class="mb-4">
+              <label for="resistin">Resistin:</label>
+              <input type="text" id="resistin" name="resistin" class="p-2 border rounded-md" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="mcp1">MCP-1:</label>
+                <input type="text" id="mcp1" name="mcp1" class="p-2 border rounded-md" required>
+            </div>
+
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded-md">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
