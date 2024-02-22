@@ -30,19 +30,20 @@ def index():
 def predict():
     if request.method == 'POST':
         # Get input values from the form
-        age = float(request.form['age'])
-        bmi = float(request.form['bmi'])
-        glucose = float(request.form['glucose'])
-        insulin = float(request.form['insulin'])
-        homa = float(request.form['homa'])
-        leptin = float(request.form['leptin'])
-        adiponectin = float(request.form['adiponectin'])
-        resistin = float(request.form['resistin'])
-        mcp1 = float(request.form['mcp1'])
-        print(f"Received form data: {age}, {bmi}, {glucose}, {insulin}, {homa}, {leptin}, {adiponectin}, {resistin}, {mcp1}")
+        input_features = [
+            float(request.form['age']),
+            float(request.form['bmi']),
+            float(request.form['glucose']),
+            float(request.form['insulin']),
+            float(request.form['homa']),
+            float(request.form['leptin']),
+            float(request.form['adiponectin']),
+            float(request.form['resistin']),
+            float(request.form['mcp1'])
+        ]
         
         # Make predictions
-        input_data = [[age, bmi, glucose, insulin, homa, leptin, adiponectin, resistin, mcp1]]
+        input_data = [input_features]
         input_data_scaled = scaler.transform(input_data)
         prediction = model.predict(input_data_scaled)[0]
 
