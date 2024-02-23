@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 app = Flask(__name__)
 
 # Load the pre-trained model and dataset
-file_path = r'C:\Users\USER PC\Downloads\archive\Coimbra_breast_cancer_dataset.csv'
+file_path = r'C:\Users\kokolet\Downloads\data\Coimbra_breast_cancer_dataset.csv'
 df = pd.read_csv(file_path)
 
 # Extract features (X) and target variable (y)

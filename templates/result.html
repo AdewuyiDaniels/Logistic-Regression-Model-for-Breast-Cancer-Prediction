@@ -9,7 +9,13 @@
 <body class="bg-gray-200 p-4">
     <div class="max-w-md mx-auto bg-white p-8 border rounded-md mt-10">
         <h1 class="text-2xl font-bold mb-4">Prediction Result</h1>
-        <p class="mb-4">The predicted classification is: {{ prediction }}</p>
+        <p class="mb-4">
+            {% if prediction == 1 %}
+                The person is likely to have breast cancer with a likelihood of {{ likelihood_percentage }}%.
+            {% else %}
+                The person is not likely to have breast cancer.
+            {% endif %}
+        </p>
         <a href="/">Go back</a>
     </div>
 </body>
