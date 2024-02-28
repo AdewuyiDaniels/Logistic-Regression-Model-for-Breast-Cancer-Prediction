@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 app = Flask(__name__)
 
 # Load the pre-trained model and dataset
-file_path = r'C:\Users\kokolet\Downloads\data\Coimbra_breast_cancer_dataset.csv'
+file_path = r"C:\Users\USER PC\Downloads\BreastDatasets\Coimbra_breast_cancer_dataset.csv"
 df = pd.read_csv(file_path)
 
 # Extract features (X) and target variable (y)
@@ -47,8 +47,11 @@ def predict():
         input_data_scaled = scaler.transform(input_data)
         prediction = model.predict(input_data_scaled)[0]
 
+        # Get the probability of the prediction
+        likelihood_percentage = model.predict_proba(input_data_scaled)[0][1] * 100
+
         # Display the result
-        return render_template('result.html', prediction=prediction)
+        return render_template('result.html', prediction=prediction, likelihood_percentage=likelihood_percentage)
 
     # If the method is not POST, redirect to the index or display an error message
     return render_template('error.html', error_message="Invalid request method")
